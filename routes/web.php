@@ -24,3 +24,6 @@ Route::get('/', function () {
 
 Route::get('/video', [VideoController::class, 'index'])->name('video.index');
 Route::post('/video', [VideoController::class, 'store'])->name('video.store');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
