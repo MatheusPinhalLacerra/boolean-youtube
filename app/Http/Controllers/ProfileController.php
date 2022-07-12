@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Dawson\Youtube\Facades\Youtube;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class VideoController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,10 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        return view('video-index');
+    {
+        $user = new User;
+        
+        return view('profile', ['user'=>$user->name]);
     }
 
     /**
@@ -35,13 +37,7 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $video = Youtube::upload($request->file('video')->getPathName(), [
-            'title'       => $request->input('title'),
-            'description' => $request->input('description')
-        ]);
-  
-        return "Video uploaded successfully. Video ID is ". $video->getVideoId();
+        //
     }
 
     /**

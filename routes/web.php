@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,10 @@ Route::get('/', function () {
 // Route::resource('video', 'VideoController');
 // Route::resource('/video', [VideoController::class, 'index']);
 
-Route::get('/video', [VideoController::class, 'index'])->name('video.index');
-Route::post('/video', [VideoController::class, 'store'])->name('video.store');
+Route::get('/video/index', [VideoController::class, 'index'])->name('video.index');
+Route::post('/video/store', [VideoController::class, 'store'])->name('video.store');
 Auth::routes();
 
+Route::get('/admin/settings', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
