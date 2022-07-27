@@ -15,6 +15,8 @@ class ProfileController extends Controller
     public function index()
     {
         $user = new User;
+        $user->all();
+        dd($user);
         
         return view('profile', ['user'=>$user->name]);
     }

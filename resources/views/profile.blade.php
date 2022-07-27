@@ -4,6 +4,11 @@
 
 @section('content_header')
     <h1>Dados Usuário</h1>
+        
+
+
+
+
 @stop
 
 @section('content')
