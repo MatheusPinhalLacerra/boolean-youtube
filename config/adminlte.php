@@ -267,8 +267,14 @@ return [
 
         [
             'text' => 'Enviar video',
-            'url'  => 'video/index',
+            'url'  => 'video/create',
             'icon' => 'fas fa-fw fa-video',
+        ],
+
+        [
+            'text' => 'Cadastrar Curso',
+            'url'  => 'course/create',
+            'icon' => 'fas fa-fw fa-plus',
         ],
         
         // [

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class CreateCourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = new User;
-        $user->all();
-        // dd($user);
-        
-        return view('profile', ['user'=>$user->name]);
+        return view('cadastro-curso');
     }
 
     /**
@@ -39,7 +35,27 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $course = new Course;
+        
+        $course->name = $request->name;
+        $course->description = $request->description;
+
+        //Upload de Imagem
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path('img/cursos'), $imageName);
+
+            $course->image = $imageName;
+        }
+
+        $course->save();
+
+        return redirect('/home');
     }
 
     /**
