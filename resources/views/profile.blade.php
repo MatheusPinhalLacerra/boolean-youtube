@@ -8,7 +8,7 @@
 
 @section('content')
 <!-- falta ajustar rota, fazer validação e salvar -->
-<form id="editfuncform" action="" method="POST" enctype="multipart/form-data">
+<form id="editfuncform" action="" method="POST" enctype="multipart/form-data" style="hei">
     @csrf
     @method('put')
     <input type="hidden" value="" name="user_id">
