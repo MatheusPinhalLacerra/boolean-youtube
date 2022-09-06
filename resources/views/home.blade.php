@@ -7,7 +7,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Meus Cursos</h1>
+    <h1>Boolean Cursos</h1>
 @stop
 
 @section('content')
@@ -24,7 +24,6 @@
         </div>
     @endforeach
 
-    <h1>Meus Cursos</h1>
 
 @stop
 

@@ -276,6 +276,12 @@ return [
             'url'  => 'course/create',
             'icon' => 'fas fa-fw fa-plus',
         ],
+
+        [
+            'text' => 'Meus Cursos',
+            'url'  => 'course/mycourses',
+            'icon' => 'fa-regular fa-play',
+        ],
         
         // [
         //     'text'    => 'multilevel',
