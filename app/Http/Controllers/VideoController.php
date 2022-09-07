@@ -40,7 +40,7 @@ class VideoController extends Controller
             'title'       => $request->input('title'),
             'description' => $request->input('description')
         ]);
-  
+        
         return "Video uploaded successfully. Video ID is ". $video->getVideoId();
     }
 

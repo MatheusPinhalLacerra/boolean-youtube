@@ -31,7 +31,10 @@ Route::post('/video/store', [VideoController::class, 'store'])->name('video.stor
 Auth::routes();
 
 Route::get('/admin/settings', [ProfileController::class, 'index'])->name('profile.index');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/more-information/{id}', [App\Http\Controllers\MoreInformationsController::class, 'index'])->name('more-informations.index');
 
 Route::get('/course/create', [CreateCourseController::class, 'index'])->name('create.index');
 Route::post('/course/store', [CreateCourseController::class, 'store'])->name('course.store');

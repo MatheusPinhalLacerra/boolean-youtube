@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,11 @@ class HomeController extends Controller
     public function index()
     {
         // $courses = new Course;
+        
+        
+        // dd($user);
+
+
         $courses = Course::all();
         // dd($courses);
         return view('home', ['courses' => $courses]);

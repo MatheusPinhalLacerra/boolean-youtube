@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class MyCoursesController extends Controller
+class MoreInformationsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $user_id = Auth::id();
-        
-        return view('my-courses', ['user_id', $user_id]);
+        $courses = Course::where('id', $id)->get();
+        return view('more-informations', ['courses' => $courses]);
     }
 
     /**

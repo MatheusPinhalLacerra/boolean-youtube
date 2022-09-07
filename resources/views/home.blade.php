@@ -7,7 +7,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Boolean Cursos</h1>
+    <h1>Cursos<b> Disponíveis</b></h1>
 @stop
 
 @section('content')
@@ -33,15 +33,16 @@
         @foreach ($courses as $curso)
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
-                <div class="d-flex flex-column align-items-center text-center" id="card-img">
-                    {{-- <p>Course Image</p> --}}
-                    {{-- <img src="/img/cursos/{{ $curso->image }}" alt="Capa do curso"> --}}
+                
+                <div class="" id="card-img">
+                    <img src="/img/cursos/{{ $curso->image }}" alt="Capa do curso">
                 </div>
+
                 <div class="inner" id="card-info-courses">
-                    <h5><strong>{{ $curso->name }}</strong></h5>
+                    <h6><strong>{{ $curso->name }}</strong></h6>
                     <p>{{ $curso->description }}</p>
                 </div>
-                <a href="#" class="small-box-footer">Mais Informações <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('more-informations.index', $curso->id)}}" class="small-box-footer">Mais Informações <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         @endforeach

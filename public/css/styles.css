@@ -1,6 +1,5 @@
-#card-info-courses{
-    /* border: 1px solid red; */
-}
+
+
 
 #card-info-courses p{
     margin: 0;
@@ -8,15 +7,17 @@
 
 
 #card-img{
-    background: url(mountain.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
+    height: 150px;
+    
+   
     
 }
 
 #card-img img{
+    border-radius: 2px;
     width: 100%;
-    height: fit-content;
-    align-items: flex-end;
+    height: 150px;
 }
 
