@@ -265,11 +265,11 @@ return [
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
 
-        [
-            'text' => 'Enviar video',
-            'url'  => 'video/create',
-            'icon' => 'fas fa-fw fa-video',
-        ],
+        // [
+        //     'text' => 'Enviar video',
+        //     'url'  => 'video/create',
+        //     'icon' => '',
+        // ],
 
         [
             'text' => 'Cadastrar Curso',
@@ -280,7 +280,13 @@ return [
         [
             'text' => 'Meus Cursos',
             'url'  => 'course/mycourses',
-            'icon' => 'fa-regular fa-play',
+            'icon' => 'fas fa-fw fa-video',
+        ],
+
+        [
+            'text' => 'Cursos Registrados',
+            'url'  => '/registered-courses',
+            'icon' => 'fas fa-duotone fa-copy',
         ],
         
         // [

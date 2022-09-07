@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CreateCourseController extends Controller
+class OpenCoursesController extends Controller
 {
-    function __construct()
-    {
-        $this -> middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +13,7 @@ class CreateCourseController extends Controller
      */
     public function index()
     {
-        
-        return view('cadastro-curso');
+        return view('open-courses');
     }
 
     /**
@@ -40,29 +33,8 @@ class CreateCourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   $user_id = Auth::id();
-        
-        
-        $course = new Course;
-        $course->user_id = $user_id;    
-        $course->name = $request->name;
-        $course->description = $request->description;
-
-        //Upload de Imagem
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            
-            $requestImage = $request->image;
-            $extension = $requestImage->extension();
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
-            $request->image->move(public_path('img/cursos'), $imageName);
-
-            $course->image = $imageName;
-        }
-
-        $course->save();
-
-        return redirect('/registered-courses');
+    {
+        //
     }
 
     /**

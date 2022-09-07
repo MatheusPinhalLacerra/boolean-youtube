@@ -36,6 +36,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/more-information/{id}', [App\Http\Controllers\MoreInformationsController::class, 'index'])->name('more-informations.index');
 
+Route::get('/registered-courses', [App\Http\Controllers\RegisteredCoursesController::class, 'index'])->name('registered-courses.index');
+Route::get('/open-courses/{id}', [App\Http\Controllers\OpenCoursesController::class, 'index'])->name('open-courses.index');
+
 Route::get('/course/create', [CreateCourseController::class, 'index'])->name('create.index');
 Route::post('/course/store', [CreateCourseController::class, 'store'])->name('course.store');
 
