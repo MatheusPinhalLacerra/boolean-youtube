@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CreateCourseController extends Controller
 {
+    function __construct()
+    {
+        $this -> middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +18,7 @@ class CreateCourseController extends Controller
      */
     public function index()
     {
+        
         return view('cadastro-curso');
     }
 
