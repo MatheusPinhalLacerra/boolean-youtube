@@ -16,11 +16,11 @@ class MyCoursesController extends Controller
 
     public function index()
     {
-
         $user_id = Auth::id();
         
         return view('my-courses', ['user_id', $user_id]);
 
+         
     }
 
     /**

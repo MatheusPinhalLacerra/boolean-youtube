@@ -6,18 +6,15 @@
 }
 
 
-#card-img{
+
+.card-img{
     background-repeat: no-repeat;
     background-size: auto;
     height: 150px;
-    
-   
-    
 }
 
-#card-img img{
+.card-img img{
     border-radius: 2px;
     width: 100%;
     height: 150px;
 }
-
