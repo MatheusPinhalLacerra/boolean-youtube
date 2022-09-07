@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Video;       
-use Dawson\Youtube\Facades\Youtube;
+
 use Illuminate\Http\Request;
 
-class VideoController extends Controller
+class ReproductionVideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +12,8 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        
+    {
+        return view('reproduction-video');
     }
 
     /**
@@ -24,7 +23,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        return view('video-create');
+        
     }
 
     /**
@@ -35,23 +34,7 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $video_id = new Video;
-        $video_id -> title = $request->title;
-        $video_id -> description = $request->description;
-
-
-        $video = Youtube::upload($request->file('video')->getPathName(), [
-            'title'       => $request->input('title'),
-            'description' => $request->input('description')
-        ]);
-        
-
-
-
-       $video_id -> token_youtube = $video->getVideoId();
-        $video_id->save();
-        return redirect('/video/create');
+        //
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CreateCourseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MyCoursesController;
+use App\Http\Controllers\ReproductionVideoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Auth;
@@ -40,3 +41,5 @@ Route::get('/course/create', [CreateCourseController::class, 'index'])->name('cr
 Route::post('/course/store', [CreateCourseController::class, 'store'])->name('course.store');
 
 Route::get('/course/mycourses', [MyCoursesController::class, 'index'])->name('mycourses.index');
+
+Route::get('/player/course', [ReproductionVideoController::class, 'index'])->name('player.index');
