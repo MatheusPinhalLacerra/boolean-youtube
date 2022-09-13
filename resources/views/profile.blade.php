@@ -8,7 +8,7 @@
 
 @section('content')
 <!-- falta ajustar rota, fazer validação e salvar -->
-<form id="editfuncform" action="" method="POST" enctype="multipart/form-data" style="hei">
+<form id="editfuncform" action="" method="POST" enctype="multipart/form-data">
     @csrf
     @method('put')
     <input type="hidden" value="" name="user_id">
@@ -83,24 +83,11 @@
                                     <option value=""></option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
+                                    <option value="Indefinido">Indefinido</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text" title="Cargo" style="width: 48px">
-                                        <i class="fas fa-id-card-alt"></i>
-                                    </div>
-                                </div>
-                                <select class="form-control" name="id_tipo_funcionario">
-                                   
-                                    <option value="">Cargo</option>
-                                    <option value="Professor">Professor</option>
-                                    
-                                </select>
-                            </div>
-                        </div>
+                       
                     </div>
 
 

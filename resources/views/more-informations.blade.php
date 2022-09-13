@@ -13,9 +13,13 @@
 @section('content')
 
 @foreach ($courses as $course)
+<form action="{{route ('more-informations.store', $course->id)}}" method="POST" enctype="multipart/form-data" style="width: 100%">
+        @csrf
     <h1>{{$course->name}}</h1>
     <p>{{$course->description}}</p>
     <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
+    <button type="submit" class="btn btn-primary" name="submit">Registre-se</button>
+    
 @endforeach
     
 
