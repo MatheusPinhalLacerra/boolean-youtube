@@ -20,7 +20,11 @@ class MyCoursesController extends Controller
         
         return view('my-courses', ['user_id', $user_id]);
 
-         
+        $id_user = Auth::id();
+
+        // $registered_courses = Course::where('user_id', $id_user)->get();
+        // return view('registered-courses',['registered_courses' => $registered_courses]);
+   
     }
 
     /**

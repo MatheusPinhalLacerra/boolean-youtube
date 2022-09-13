@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User_courses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MoreInformationsController extends Controller
 {
@@ -34,9 +36,16 @@ class MoreInformationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $course_id)
     {
-        //
+        $user_id = Auth::id();
+        $user_course = new User_courses;
+
+        $register_course = $request;
+        $user_course->user_id=$user_id;
+        $user_course->course_id=$course_id;
+        $user_course->save();
+        return redirect('/home');
     }
 
     /**

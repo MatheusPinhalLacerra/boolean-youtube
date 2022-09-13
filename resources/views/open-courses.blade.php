@@ -16,8 +16,11 @@
     <h1>{{$course->name}}</h1>
     <p>{{$course->description}}</p>
     <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
+
+
 @endforeach --}}
-    
+
+    <a href="{{route('video.create')}}"><button>Enviar Video</button></a>
 
 @stop
 

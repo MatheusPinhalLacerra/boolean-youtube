@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreateCourseController;
+use App\Http\Controllers\MoreInformationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MyCoursesController;
 use App\Http\Controllers\ReproductionVideoController;
@@ -42,6 +43,9 @@ Route::get('/open-courses/{id}', [App\Http\Controllers\OpenCoursesController::cl
 
 Route::get('/course/create', [CreateCourseController::class, 'index'])->name('create.index');
 Route::post('/course/store', [CreateCourseController::class, 'store'])->name('course.store');
+
+Route::post('/course/register/{id}', [MoreInformationsController::class, 'store'])->name('more-informations.store');
+
 
 Route::get('/course/mycourses', [MyCoursesController::class, 'index'])->name('mycourses.index');
 
