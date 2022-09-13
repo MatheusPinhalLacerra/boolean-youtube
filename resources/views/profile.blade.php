@@ -42,7 +42,7 @@
                             </div>
                         </x-slot>
                     </x-adminlte-input>
-                    <x-adminlte-input name="data_nasc" placeholder="Data de Nascimento *" value="{{ $funcionario->data_nasc ?? old('data_nasc')}}">
+                    <x-adminlte-input name="data_nasc" placeholder="Data de Nascimento *" value="">
                         <x-slot name="prependSlot">
                             <div class="input-group-text" title="Data de Nascimento" style="width: 48px">
                                 <i class="fas fa-lg fa-birthday-cake"></i>

@@ -20,7 +20,7 @@ class CreateCourseController extends Controller
     public function index()
     {
         
-        return view('cadastro-curso');
+        return view('course-create');
     }
 
     /**
