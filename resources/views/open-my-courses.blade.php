@@ -7,7 +7,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Curso Aberto</h1>
+    <h1>Batata</h1>
 @stop
 
 @section('content')
@@ -20,8 +20,8 @@
 
 @endforeach --}}
 
-    <a href="{{route('video.create')}}"><button>Enviar Video</button></a>
-  
+ 
+
 @stop
 
 @section('css')

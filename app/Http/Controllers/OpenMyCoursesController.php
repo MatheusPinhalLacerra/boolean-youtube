@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReproductionVideoController extends Controller
+class OpenMyCoursesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class ReproductionVideoController extends Controller
      */
     public function index()
     {
-        $video=["token_youtube"=>'gJBIhkz_t8Y'];
-
-        return view('reproduction-video',["video"=>$video]);
+        return view('open-my-courses');
     }
 
     /**
@@ -25,7 +23,7 @@ class ReproductionVideoController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**

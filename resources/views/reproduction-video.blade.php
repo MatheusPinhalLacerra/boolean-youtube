@@ -13,10 +13,10 @@
 @section('content')
 
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/3cq3wLC6EBY" 
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/{{$video["token_youtube"]}}"
       frameborder="0" 
     allowfullscreen></iframe>
-
 @stop
 
 @section('css')
