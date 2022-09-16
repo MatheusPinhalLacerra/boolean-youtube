@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\User;
+use App\Models\User_courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,9 +21,13 @@ class MyCoursesController extends Controller
     {
         $user_id = Auth::id();
         
-        return view('my-courses', ['user_id', $user_id]);
+      $my_courses = User::where('id',$user_id)->with('courses')->first(); 
+      //dd($my_courses->courses);
 
-        $id_user = Auth::id();
+      return view('my-courses',['my_courses' => $my_courses->courses]);
+
+
+       // return view('registered-courses',['registered_courses' => $registered_courses]);
 
         // $registered_courses = Course::where('user_id', $id_user)->get();
         // return view('registered-courses',['registered_courses' => $registered_courses]);

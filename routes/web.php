@@ -28,7 +28,7 @@ Route::get('/', function () {
 // Route::resource('video', 'VideoController');
 // Route::resource('/video', [VideoController::class, 'index']);
 
-Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
+Route::get('/video/create/{id}', [VideoController::class, 'create'])->name('video.create');
 Route::post('/video/store', [VideoController::class, 'store'])->name('video.store');
 Auth::routes();
 
@@ -50,3 +50,5 @@ Route::post('/course/register/{id}', [MoreInformationsController::class, 'store'
 Route::get('/course/mycourses', [MyCoursesController::class, 'index'])->name('mycourses.index');
 
 Route::get('/player/course', [ReproductionVideoController::class, 'index'])->name('player.index');
+//mycouses
+Route::get('/open-mycourses/{id}', [App\Http\Controllers\OpenMyCoursesController::class, 'index'])->name('open-my-courses.index');
