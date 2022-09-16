@@ -1,4 +1,75 @@
+/* CSS Tela Welcome */
 
+*{
+    font-family: 'Poppins', sans-serif;
+    color: #1A1F17;
+    /* background-color: #000; */
+}
+
+
+/* Início NavBar */
+#row-navbar{
+    width: 100%;
+}
+
+ #logo-welcome{
+    width: 200px;
+ }
+
+ #item-cadastro{
+    background: #fff;
+    border: 1px solid #000;
+ }
+
+ #item-cadastro-b:hover{
+    color: #386fb5;
+ }
+
+.nav-link{
+    color: black !important;
+}
+
+li{
+    margin: 0 10px;
+}
+
+#itens-navbar{
+    justify-content: right;
+}
+
+#item-login:hover{
+    color: #fff;
+}
+
+@media (max-width: 992px){
+    
+    #item-cadastro{
+        background: none;
+        border: none;
+     }
+
+     li{
+      margin: 0;
+  }
+
+
+    
+}
+
+
+/* Fim NavBar */
+
+/* Início Carrossel Cursos */
+
+.your-class{
+    width: 1000px;
+    margin: 0 auto;
+}
+/* Fim Carrossel */
+
+
+
+/* CSS Tela Home */
 
 
 #card-info-courses p{
