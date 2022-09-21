@@ -2,8 +2,6 @@
 
 *{
     font-family: 'Poppins', sans-serif;
-    color: #1A1F17;
-    /* background-color: #000; */
 }
 
 
@@ -56,17 +54,75 @@ li{
     
 }
 
-
 /* Fim NavBar */
 
 /* Início Carrossel Cursos */
 
-.your-class{
-    width: 1000px;
-    margin: 0 auto;
+.text-slide-welcome{
+    margin-top: 40px;
+    text-align: center;
+}
+.swiper-wrapper{
+    margin-top: 30px;
+}
+
+.swiper-button-next{
+
 }
 /* Fim Carrossel */
 
+
+/* Footer Welcome */
+footer{
+    margin: 40px 0 0 0;
+    background-color: #007bff;
+    color: #fff;
+
+}
+
+.footer-row{
+height: 200px;
+}
+
+#footer-logo{
+    margin: auto;
+    text-align: right;
+}
+#footer-logo img{
+    width: 70%;
+    
+}
+
+#footer-center-list{
+    margin: auto;
+    text-align: right;
+}
+
+#link-footer-list{
+  
+}
+
+ul a li{
+    color: #000 !important;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#social-icons-line{
+   margin: auto;
+}
+
+#test{
+    justify-content: center;
+}
+
+#social-icons-line a img{
+   margin: 0 10px;
+    width: 30px;
+}
+/* Fim Footer Welcome */
 
 
 /* CSS Tela Home */
@@ -75,8 +131,6 @@ li{
 #card-info-courses p{
     margin: 0;
 }
-
-
 
 .card-img{
     background-repeat: no-repeat;
