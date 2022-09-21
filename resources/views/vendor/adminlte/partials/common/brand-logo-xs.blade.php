@@ -26,6 +26,6 @@
         {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
     </span> --}}
 
-    {{-- <img src="/img/logo.png" alt="Logo Boolean"> --}}
-   
+    <img src="/img/logo-branca.png" alt="Logo Boolean" title="Home" style="width: 250px">
+    
 </a>
