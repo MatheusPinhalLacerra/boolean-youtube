@@ -2,21 +2,23 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-@extends('adminlte::page') 
+@extends('adminlte::page')
 
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1><b> Nome do curso </b></h1> 
+    <h1><b> Nome do curso </b></h1>
 @stop
 
 @section('content')
 
 
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/{{$video["token_youtube"]}}"
-      frameborder="0" 
-    allowfullscreen></iframe>
+    <iframe width="853" height="480" src="https://www.youtube.com/embed/{{$video["token_youtube"]}}"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+    
 @stop
 
 @section('css')
@@ -26,6 +28,3 @@
 @section('js')
     {{-- <script> console.log('Hi!'); </script> --}}
 @stop
-
-
-

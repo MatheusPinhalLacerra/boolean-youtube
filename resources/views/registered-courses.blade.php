@@ -26,6 +26,7 @@
                         <h6><strong>{{ $registered->name }}</strong></h6>
                         <p>{{ $registered->description }}</p>
                     </div>
+                    <p></p>
                     <a href="{{route('open-courses.index', $registered->id)}}" class="small-box-footer">Abrir Curso <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>

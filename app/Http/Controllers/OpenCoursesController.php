@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class OpenCoursesController extends Controller
@@ -11,9 +12,11 @@ class OpenCoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('open-courses');
+        
+        $courses = Course::where('id', $id)->get();
+        return view('open-courses', ['courses' => $courses]);
     }
 
     /**

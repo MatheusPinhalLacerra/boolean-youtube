@@ -22,8 +22,9 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        
         return view('video-create');
     }
 
@@ -35,7 +36,7 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
         $video_id = new Video;
         $video_id -> title = $request->title;
         $video_id -> description = $request->description;
