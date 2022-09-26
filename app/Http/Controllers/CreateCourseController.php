@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Course_area;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,8 +20,9 @@ class CreateCourseController extends Controller
      */
     public function index()
     {
-        
-        return view('course-create');
+        $area_curso= Course_area::get();
+        // dd($area_curso);
+        return view('course-create', ['area_course' => $area_curso]);
     }
 
     /**
@@ -47,6 +49,8 @@ class CreateCourseController extends Controller
         $course->user_id = $user_id;    
         $course->name = $request->name;
         $course->description = $request->description;
+        $course->instructor_name = $request->instructor_name;
+        $course->course_areas_id = $request->course_areas_id;
 
         //Upload de Imagem
         if ($request->hasFile('image') && $request->file('image')->isValid()) {

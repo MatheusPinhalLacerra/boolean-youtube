@@ -12,15 +12,13 @@
 
 @section('content')
 
-{{-- @foreach ($courses as $course)
+@foreach ($courses as $course)
     <h1>{{$course->name}}</h1>
     <p>{{$course->description}}</p>
     <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
+@endforeach
 
-
-@endforeach --}}
-
-    <a href="{{route('video.create')}}"><button>Enviar Video</button></a>
+    <a href="{{route('video.create', $course->id)}}"><button>Enviar Video</button></a>
   
 @stop
 

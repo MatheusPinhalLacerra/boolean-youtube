@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class ReproductionVideoController extends Controller
@@ -14,8 +15,9 @@ class ReproductionVideoController extends Controller
     public function index()
     {
         $video=["token_youtube"=>'gJBIhkz_t8Y'];
+        $videos = Video::get();
 
-        return view('reproduction-video',["video"=>$video]);
+        return view('reproduction-video',['video'=>$video, 'video_information' => $videos]);
     }
 
     /**

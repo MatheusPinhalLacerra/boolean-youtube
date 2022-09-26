@@ -42,10 +42,10 @@
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8000/login"><b id="item-login">Fazer Login</b></a>
+                                <a class="nav-link" href="{{route('login')}}"><b id="item-login">Fazer Login</b></a>
                             </li>
                             <li class="nav-item" id="item-cadastro">
-                                <a class="nav-link disabled" href="http://127.0.0.1:8000/register"><b id="item-cadastro-b">Cadastrar-se</b></a>
+                                <a class="nav-link disabled" href="{{route('register')}}"><b id="item-cadastro-b">Cadastrar-se</b></a>
                             </li>
 
                         </ul>

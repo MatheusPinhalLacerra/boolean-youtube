@@ -23,8 +23,17 @@
     color: #386fb5;
  }
 
+<<<<<<< HEAD
 .nav-link{
     /* color: black !important; */
+=======
+.nav-link #item-login{
+    color: black !important;
+}
+
+.nav-link #item-cadastro-b{
+    color: black !important;
+>>>>>>> d615302fe0914684258dc4a685a8120b53f1eb6d
 }
 
 li{
@@ -56,7 +65,8 @@ li{
 
 /* Fim NavBar */
 
-/* Início Carrossel Cursos */
+
+/* Início Carrossel Cursos*/
 
 .text-slide-welcome{
     margin-top: 40px;
@@ -66,10 +76,8 @@ li{
     margin-top: 30px;
 }
 
-.swiper-button-next{
-
-}
 /* Fim Carrossel */
+
 
 
 /* Footer Welcome */
