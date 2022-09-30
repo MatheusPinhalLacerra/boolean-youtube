@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Course;
 use App\Models\Video;       
 use Dawson\Youtube\Facades\Youtube;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
-{
+{ 
+    
     /**
      * Display a listing of the resource.
      *
@@ -23,11 +26,19 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
+<<<<<<< HEAD
     {
         $id_course = $id;
         // dd($id_course);
         // echo gettype($id_course);
         return view('video-create');
+=======
+    {   
+        $id_course = $id;
+        return view('video-create', ["id_course"=>$id_course]);
+        
+    
+>>>>>>> f8f55454e5732f0192434584796372adb9ef2c3e
     }
 
     /**
@@ -36,13 +47,13 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-       
+    public function store($id_course, Request $request)
+    {   
         $video_id = new Video;
         $video_id -> title = $request->title;
         $video_id -> description = $request->description;
 
+        //return redirect('registered-courses');
 
         $video = Youtube::upload($request->file('video')->getPathName(), [
             'title'       => $request->input('title'),
@@ -50,11 +61,10 @@ class VideoController extends Controller
         ]);
         
 
-
-
        $video_id -> token_youtube = $video->getVideoId();
+       $video_id -> course_id = $id_course;
         $video_id->save();
-        return redirect('/video/create');
+        return redirect('registered-courses');
     }
 
     /**

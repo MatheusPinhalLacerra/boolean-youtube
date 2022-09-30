@@ -39,7 +39,7 @@ Route::get('/register', function () {
 
 // Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
 
-Route::post('/video/store', [VideoController::class, 'store'])->name('video.store');
+Route::post('/video/store/create/{id_course}', [VideoController::class, 'store'])->name('video.store');
 Auth::routes();
 
 Route::get('/admin/settings', [ProfileController::class, 'index'])->name('profile.index');
