@@ -4,13 +4,15 @@
 
 @section('content_header')
     <h1>Envie seu Vídeo</h1>
+    
 @stop
 
 @section('content')
     <div class="container">
         <div class="row">
-            <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data" style="width: 100%">
+            <form action="{{ route('video.store')}}" method="post" enctype="multipart/form-data" style="width: 100%">
                 @csrf
+
                 <label for="titulo-video">Título (obrigatório)</label>
                 <p><input type="text" id="titulo-video" class="form-control col-6" name="title"
                         placeholder="Título do vídeo"></p>

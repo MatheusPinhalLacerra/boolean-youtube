@@ -24,7 +24,9 @@ class VideoController extends Controller
      */
     public function create($id)
     {
-        
+        $id_course = $id;
+        // dd($id_course);
+        // echo gettype($id_course);
         return view('video-create');
     }
 
