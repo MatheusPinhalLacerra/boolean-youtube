@@ -7,9 +7,12 @@
 @stop
 
 @section('content')
+
     <div class="container">
-        <div class="row">
-            <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data" style="width: 100%">
+
+        
+    <div class="row">
+            <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data" style="width: 100%">
                 @csrf
                 <label for="titulo-video">Título (obrigatório)</label>
                 <p><input type="text" id="titulo-video" class="form-control col-6" name="title"
@@ -27,8 +30,9 @@
 
             </form>
         </div>
+       
     </div>
-
+    
 @stop
 
 @section('css')
