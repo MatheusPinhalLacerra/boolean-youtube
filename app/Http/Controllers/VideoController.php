@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\Video;       
+use App\Models\Video;
 use Dawson\Youtube\Facades\Youtube;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
-{ 
-    
+{
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        
+    {
     }
 
     /**
@@ -26,19 +25,9 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
-<<<<<<< HEAD
     {
         $id_course = $id;
-        // dd($id_course);
-        // echo gettype($id_course);
-        return view('video-create');
-=======
-    {   
-        $id_course = $id;
-        return view('video-create', ["id_course"=>$id_course]);
-        
-    
->>>>>>> f8f55454e5732f0192434584796372adb9ef2c3e
+        return view('video-create', ["id_course" => $id_course]);
     }
 
     /**
@@ -48,10 +37,10 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store($id_course, Request $request)
-    {   
+    {
         $video_id = new Video;
-        $video_id -> title = $request->title;
-        $video_id -> description = $request->description;
+        $video_id->title = $request->title;
+        $video_id->description = $request->description;
 
         //return redirect('registered-courses');
 
@@ -59,10 +48,10 @@ class VideoController extends Controller
             'title'       => $request->input('title'),
             'description' => $request->input('description')
         ]);
-        
 
-       $video_id -> token_youtube = $video->getVideoId();
-       $video_id -> course_id = $id_course;
+
+        $video_id->token_youtube = $video->getVideoId();
+        $video_id->course_id = $id_course;
         $video_id->save();
         return redirect('registered-courses');
     }

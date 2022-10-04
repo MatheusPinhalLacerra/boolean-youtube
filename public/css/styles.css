@@ -30,17 +30,12 @@ label{
     color: #386fb5;
  }
 
-<<<<<<< HEAD
-.nav-link{
-    /* color: black !important; */
-=======
 .nav-link #item-login{
     color: black !important;
 }
 
 .nav-link #item-cadastro-b{
     color: black !important;
->>>>>>> d615302fe0914684258dc4a685a8120b53f1eb6d
 }
 
 li{

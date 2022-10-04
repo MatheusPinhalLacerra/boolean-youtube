@@ -4,21 +4,16 @@
 
 @section('content_header')
     <h1>Envie seu Vídeo</h1>
-    
+
 @stop
 
 @section('content')
 
     <div class="container">
-<<<<<<< HEAD
-        <div class="row">
-            <form action="{{ route('video.store')}}" method="post" enctype="multipart/form-data" style="width: 100%">
-=======
 
-        
-    <div class="row">
-            <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data" style="width: 100%">
->>>>>>> f8f55454e5732f0192434584796372adb9ef2c3e
+        <div class="row">
+            <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data"
+                style="width: 100%">
                 @csrf
 
                 <label for="titulo-video">Título (obrigatório)</label>
@@ -37,9 +32,9 @@
 
             </form>
         </div>
-       
+
     </div>
-    
+
 @stop
 
 @section('css')
@@ -47,7 +42,5 @@
 @stop
 
 @section('js')
-    <script>
-        
-    </script>
+    <script></script>
 @stop
