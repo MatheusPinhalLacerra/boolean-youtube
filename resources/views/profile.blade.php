@@ -35,7 +35,7 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Configuração do Perfil</h4>
                     </div>
-                    <x-adminlte-input name="nome" placeholder="Nome Completo *" value="">
+                    <x-adminlte-input name="nome" placeholder="Nome Completo *" value="{{$user->name}}">
                         <x-slot name="prependSlot">
                             <div class="input-group-text" title="Nome completo" style="width: 48px">
                                 <i class="fas fa-id-card-alt"></i>
@@ -166,7 +166,7 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Configuração de Usuário</h4>
                     </div>
-                    <x-adminlte-input type="email" id='email' name="email" placeholder="Email" onblur="validateEmail(this)" value="">
+                    <x-adminlte-input type="email" id='email' name="email" placeholder="Email" onblur="validateEmail(this)" value="{{$user->email}}">
                         <x-slot name="prependSlot">
                             <div class="input-group-text" title="Email" style="width: 48px">
                                 <i class="fas fa-at"></i>

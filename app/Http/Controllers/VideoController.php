@@ -26,19 +26,11 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
-<<<<<<< HEAD
-    {
-        $id_course = $id;
-        // dd($id_course);
-        // echo gettype($id_course);
-        return view('video-create');
-=======
     {   
         $id_course = $id;
         return view('video-create', ["id_course"=>$id_course]);
         
     
->>>>>>> f8f55454e5732f0192434584796372adb9ef2c3e
     }
 
     /**

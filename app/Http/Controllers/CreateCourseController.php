@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Course_area;
+use Google\Service\AIPlatformNotebooks\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,7 +89,11 @@ class CreateCourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area_curso= Course_area::get();
+        if (!$course = Course :: find($id)){
+            return redirect() -> route('create.index');
+        }
+        return view('course-edit', ['area_course' => $area_curso],compact('course'));
     }
 
     /**
@@ -100,7 +105,27 @@ class CreateCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+
+        $this->Course->where(['id'=>$id])->update([
+
+           'name' => $request->name,
+           'description' => $request->description,
+           'instructor_name' => $request->instructor_name,
+           'course_areas_id' => $request->course_areas_id
+
+        ]);
+
+
+
+        // $area_curso= Course_area::get();
+        // if (!$course = Course :: find($id)){
+        //     return redirect() -> route('create.index');
+        // }
+        // $course->update($request->all());
+
+        return route('mycourses.index');
+    
     }
 
     /**

@@ -19,6 +19,7 @@
 @endforeach
 
     <a href="{{route('video.create', $course->id)}}"><button>Enviar Video</button></a>
+    <a href="{{route('edit-course.edit', $course->id)}}"><button>Editar Curso</button></a>
   
 @stop
 

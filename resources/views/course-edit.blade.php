@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="row">
         <div class="col-4">
-            <h1>Criar Curso</h1>
+            <h1>Editando: {{$course->name}}</h1>
         </div>
 
     </div>
@@ -14,14 +14,15 @@
 
 @section('content')
 
-    <form action="{{ route('course.store') }}" method="POST" enctype="multipart/form-data" style="width: 100%">
+    <form action="{{route('edit-course.update', $course->id)}}" method="POST" enctype="multipart/form-data" style="width: 100%">
         @csrf
+        @method('PUT')
         {{-- <label for="titulo-video">Nome do Curso (obrigatório)</label> --}}
 
         <div class="course-create-form" style="margin-bottom: 20px">
             <label for="curso">Curso</label>
             <input type="text" class="form-control col-6" id="curso" name="name" placeholder="Nome do Curso"
-                required="required">
+                required="required" value="{{$course->name}}">
         </div>
 
 
@@ -29,7 +30,7 @@
         <div class="course-create-form" style="margin: 20px 0">
             <label for="curso">Nome do Instrutor:</label>
             <input type="text" class="form-control col-6" id="instructor_name" name="instructor_name"
-                placeholder="Nome do Instrutor" required="required">
+                placeholder="Nome do Instrutor" required="required" value="{{$course->instructor_name}}">
         </div>
 
         <div class="course-create-form">
@@ -45,18 +46,18 @@
 
         <div class="course-create-form" style="margin: 20px 0">
             <label for="descricao">Descrição</label>
-            <textarea name="description" id="descricao" cols="30" rows="5" class="form-control col-6"
-                required="required"></textarea>
-            {{-- <input type="text" class="form-control col-6" id="descricao" name="description" placeholder="Descrição do Curso"> --}}
+            {{-- <textarea name="description" id="descricao" cols="30" rows="5" class="form-control col-6" --}}
+                {{-- required="required" ></textarea> --}}
+             <input type="text" class="form-control col-6" id="descricao" name="description" placeholder="Descrição do Curso" value="{{$course->description}}"> 
         </div>
 
         <div style="margin: 30px 0%">
             <p>Imagem de Capa</p> 
             <label for="imagem" class="col-12" style=""></label>
-            <input type="file" name="image" id="imagem" required="required">
-            required="required"></textarea>
+            <input type="file" name="image" id="imagem" ></textarea>
+            <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Cadastrar Curso</button>
+        <button type="submit" class="btn btn-primary" name="submit">Salvar alterações</button>
     </form>
 
 
