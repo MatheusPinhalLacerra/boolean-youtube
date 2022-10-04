@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class OpenMyCoursesController extends Controller
@@ -11,11 +13,12 @@ class OpenMyCoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('open-my-courses');
+        $courses = Course::where('id', $id)->get();
+        $videos = Video::where('course_id', $id)->get();
+        return view('open-my-courses', ['courses' => $courses],['videos'=>$videos]);
     }
-
     /**
      * Show the form for creating a new resource.
      *

@@ -12,12 +12,14 @@ class ReproductionVideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $video=["token_youtube"=>'gJBIhkz_t8Y'];
-        $videos = Video::get();
+        $video= Video::where('id', $id)->first();
+        // $video=["token_youtube"=>'--KxaI6ywnk'];
+        // $videos = Video::get();
+        // dd($video);
 
-        return view('reproduction-video',['video'=>$video, 'video_information' => $videos]);
+        return view('reproduction-video',['video'=>$video, 'video_information' => $video]);
     }
 
     /**

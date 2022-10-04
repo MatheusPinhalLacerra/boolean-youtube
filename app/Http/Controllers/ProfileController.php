@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -18,11 +19,17 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = new User;
-        $user->all();
-        // dd($user);
+         $user_id = Auth ::id();
+
+        $User= User::get();
+        if (!$user = User :: find($user_id)){
+            return redirect() -> route('home');
+        }
+        return view('profile',compact('user'));
+
+        // $user_id = Auth ::id();
         
-        return view('profile', ['user'=>$user->name]);
+        // return view('profile', [$user_id]);
     }
 
     /**

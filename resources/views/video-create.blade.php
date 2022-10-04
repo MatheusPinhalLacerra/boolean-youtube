@@ -10,10 +10,16 @@
 @section('content')
 
     <div class="container">
+<<<<<<< HEAD
 
         <div class="row">
             <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data"
                 style="width: 100%">
+=======
+        
+    <div class="row">
+            <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data" style="width: 100%">
+>>>>>>> 684657625d1359b2a16da081a60d902dab335d99
                 @csrf
 
                 <label for="titulo-video">Título (obrigatório)</label>

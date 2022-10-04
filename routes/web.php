@@ -57,11 +57,14 @@ Route::get('/open-courses/video/create/{id}', [VideoController::class, 'create']
 Route::get('/course/create', [CreateCourseController::class, 'index'])->name('create.index');
 Route::post('/course/store', [CreateCourseController::class, 'store'])->name('course.store');
 
+Route::get('/course/edit/{id}', [CreateCourseController::class, 'edit'])->name('edit-course.edit');
+Route::put('/course/edit/{id}',[CreateCourseController::class, 'update'])->name('edit-course.update');
+
 Route::post('/course/register/{id}', [MoreInformationsController::class, 'store'])->name('more-informations.store');
 
 
 Route::get('/course/mycourses', [MyCoursesController::class, 'index'])->name('mycourses.index');
 
-Route::get('/player/course', [ReproductionVideoController::class, 'index'])->name('player.index');
+Route::get('/open-mycourses/course/player/{id}', [ReproductionVideoController::class, 'index'])->name('player.index');
 //mycouses
 Route::get('/open-mycourses/{id}', [App\Http\Controllers\OpenMyCoursesController::class, 'index'])->name('open-my-courses.index');
