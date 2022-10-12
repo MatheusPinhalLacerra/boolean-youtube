@@ -10,29 +10,22 @@
 @section('content')
 
     <div class="container">
-<<<<<<< HEAD
-
-        <div class="row">
-            <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data"
-                style="width: 100%">
-=======
         
     <div class="row">
             <form action="{{ route('video.store', $id_course) }}" method="post" enctype="multipart/form-data" style="width: 100%">
->>>>>>> 684657625d1359b2a16da081a60d902dab335d99
                 @csrf
 
                 <label for="titulo-video">Título (obrigatório)</label>
                 <p><input type="text" id="titulo-video" class="form-control col-6" name="title"
-                        placeholder="Título do vídeo"></p>
+                        placeholder="Título do vídeo" required="required"></p>
 
                 <label for="descricao-video">Descrição</label>
                 <p>
                     <textarea name="description" id="descricao-video" class="form-control col-6" rows="2" cols="30"
-                        rows="10" placeholder="Descrição do vídeo"></textarea>
+                        rows="10" placeholder="Descrição do vídeo" required="required"></textarea>
                 </p>
                 <label for="arquivo-video">Arquivo de vídeo</label>
-                <p><input type="file" id="arquivo-video" name="video"></p>
+                <p><input type="file" id="arquivo-video" name="video" required="required"></p>
 
                 <p><button type="submit" class="btn btn-primary" name="submit">Enviar</button></p>
 

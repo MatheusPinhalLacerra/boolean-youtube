@@ -7,7 +7,6 @@
         <div class="col-4">
             <h1>Criar Curso</h1>
         </div>
-
     </div>
 
 @stop

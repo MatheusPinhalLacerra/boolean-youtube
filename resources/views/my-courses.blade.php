@@ -1,15 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
 @extends('adminlte::page')
 
 @section('title', 'Enviar Vídeo')
 
 @section('content_header')
-<h1>Meus<b> Cursos</b></h1>
+    <h1>Meus Cursos</h1>
 @stop
 
 @section('content')
-<div class="row">
+    <div class="row">
         @foreach ($my_courses as $courses)
-          
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
 
@@ -21,12 +24,13 @@
                         <h6><strong>{{ $courses->name }}</strong></h6>
                         <p>{{ $courses->description }}</p>
                     </div>
-                    <a href="{{route('open-my-courses.index', $courses->id)}}" class="small-box-footer">Abrir Curso <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ route('open-my-courses.index', $courses->id) }}" class="small-box-footer">Abrir Curso <i
+                            class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         @endforeach
     </div>
-    @stop
+@stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
@@ -34,7 +38,5 @@
 
 
 @section('js')
-    <script>
-        
-    </script>
+    <script></script>
 @stop
