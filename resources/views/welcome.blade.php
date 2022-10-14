@@ -42,10 +42,11 @@
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('login')}}"><b id="item-login">Fazer Login</b></a>
+                                <a class="nav-link" href="{{ route('login') }}"><b id="item-login">Fazer Login</b></a>
                             </li>
                             <li class="nav-item" id="item-cadastro">
-                                <a class="nav-link disabled" href="{{route('register')}}"><b id="item-cadastro-b">Cadastrar-se</b></a>
+                                <a class="nav-link disabled" href="{{ route('register') }}"><b
+                                        id="item-cadastro-b">Cadastrar-se</b></a>
                             </li>
 
                         </ul>
@@ -71,10 +72,10 @@
                 <img class="d-block w-100" src="/img/banner-site.png" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/banner-site.png" alt="Second slide">
+                <img class="d-block w-100" src="/img/banner-site-2.png" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/banner-site.png" alt="Second slide">
+                <img class="d-block w-100" src="/img/banner-site-3.png" alt="Second slide">
             </div>
 
         </div>
@@ -91,70 +92,40 @@
 
     {{-- Função nova --}}
 
-    <section class="swiper mySwiper container">
+    <section class="swiper mySwiper container" id="first-div-slider">
         <div class="text-slide-welcome">
             <h3>Cursos Disponíveis</h3>
         </div>
 
-        <div class="swiper-wrapper" style="">
-
-            <div class="card swiper-slide" style="width: 18rem;">
-                <img src="/img/carrossel3.jpg" class="card-img-top" alt="...">
+        <div class="swiper-wrapper" id="second-div-slider">
+            @foreach ($courses as $course)
+            <div class="card-carroussel card swiper-slide col-sm-6 col-12 col-lg-4">
+                <img src="/img/cursos/{{$course->image}}" class="" alt="Capa Curso">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">{{$course->name}}</h5>
+                    <p class="card-text">{{$course->description}}</p>
+                    <a href="{{route('home')}}" class="btn btn-primary">Mais Informações</a>
                 </div>
-            </div>
-            <div class="card swiper-slide" style="width: 18rem;">
-                <img src="/img/carrossel3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card swiper-slide" style="width: 18rem;">
-                <img src="/img/carrossel3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card swiper-slide" style="width: 18rem;">
-                <img src="/img/carrossel3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            </div>  
+            @endforeach
+          
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        {{-- <div class="swiper-pagination"></div> --}}
+      
 
     </section>
 
 
     <footer>
         <div class="row footer-row">
-            <div class="col-4" id="footer-logo">
+            <div class="col-12 col-sm-4" id="footer-logo">
                 <img src="/img/logo.png" alt="Logo Boolean Cursos">
             </div>
 
-            <div class="col-4" id="footer-center-list">
-                <ul>
-                    <a href="" class="link-footer-list">
+            <div class="col-12 col-sm-4" id="footer-center-list">
+                <ul id="ul-footer">
+                    <a href="">
                         <li>Categorias</li>
                     </a>
                     <a href="">
@@ -166,17 +137,21 @@
                 </ul>
             </div>
 
-            <div class="col-4" id="social-icons-line">
-                <div id="test">
-                    <a href=""><img src="/img/network/instagram.png" alt="Ícone Instagram" title="Ícone Instagram"></a>
-                    <a href=""><img src="/img/network/facebook.png" alt="Ícone Facebook" title="Ícone Facebook"></a>
-                    <a href=""><img src="/img/network/youtube.png" alt="Ícone Youtube" title="Ícone Youtube"></a>
-                    <a href=""><img src="/img/network/whats.png" alt="Ícone WhatsApp" title="Ícone WhatsApp"></a>
-                </div>
-                   
+            <div class="col-12 col-sm-4" id="social-icons-line">
+                <div id="icones-div">
+                    <a href=""><img src="/img/network/instagram.png" alt="Ícone Instagram"
+                            title="Ícone Instagram"></a>
+                    <a href=""><img src="/img/network/facebook.png" alt="Ícone Facebook"
+                            title="Ícone Facebook"></a>
+                    <a href=""><img src="/img/network/youtube.png" alt="Ícone Youtube"
+                            title="Ícone Youtube"></a>
+                    <a href=""><img src="/img/network/whats.png" alt="Ícone WhatsApp"
+                            title="Ícone WhatsApp"></a>
                 </div>
 
             </div>
+
+        </div>
         </div>
     </footer>
     {{-- Fim Função --}}

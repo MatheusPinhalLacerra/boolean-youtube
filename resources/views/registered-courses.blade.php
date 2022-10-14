@@ -15,7 +15,30 @@
     <div class="row">
         @foreach ($registered_courses as $registered)
           
-            <div class="col-lg-3 col-6">
+        <div class="card card-container" style="margin-right: 20px">
+
+            <img class="card-img-top" src="/img/cursos/{{ $registered->image }}" alt="Imagem de capa">
+
+
+            <div class="card-body">
+                <div class="card-name">
+                    <h5 class="card-title"><b>{{ $registered->name }}</b></h5>
+                </div>
+
+                {{-- <div class="card-description">
+                    <p class="card-text">{{$course->description}}</p>
+                </div> --}}
+
+
+                <a href="{{ route('more-informations.index', $registered->id) }}" class="btn btn-primary">Mais
+                    Informações</a>
+
+
+            </div>
+        </div>
+
+
+            {{-- <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
 
                     <div class="card-img" id="">
@@ -29,7 +52,7 @@
                     <p></p>
                     <a href="{{route('open-courses.index', $registered->id)}}" class="small-box-footer">Abrir Curso <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div>
+            </div> --}}
         @endforeach
     </div>
 @stop
