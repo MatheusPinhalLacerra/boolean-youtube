@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-@extends('adminlte::page') 
+@extends('adminlte::page')
 
 @section('title', 'Dashboard')
 
@@ -12,15 +12,17 @@
 
 @section('content')
 
-@foreach ($courses as $course)
-    <h1>{{$course->name}}</h1>
-    <p>{{$course->description}}</p>
-    <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
-@endforeach
+    @foreach ($courses as $course)
+        <div class="background-open-course">
+            <h5>{{ $course->name }}</h5>
+            <p>{{ $course->description }}</p>
+            <img id="img-open-course" class="d-block" src="/img/cursos/{{ $course->image }}" alt="Imagem Capa">
+            <a href="{{ route('video.create', $course->id) }}"><button class="btn btn-primary">Enviar Vídeo</button></a>
+            <a href="{{ route('edit-course.edit', $course->id) }}"><button class="btn btn-primary">Editar Curso</button></a>
+        </div>
+    @endforeach
 
-    <a href="{{route('video.create', $course->id)}}"><button>Enviar Video</button></a>
-    <a href="{{route('edit-course.edit', $course->id)}}"><button>Editar Curso</button></a>
-  
+
 @stop
 
 @section('css')

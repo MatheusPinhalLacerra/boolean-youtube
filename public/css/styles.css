@@ -1,69 +1,68 @@
 /* CSS Tela Welcome */
 
-*{
+* {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-
 }
 
 
-label{
+label {
     font-size: 14px;
 }
 
 
 /* Início NavBar */
-#row-navbar{
+#row-navbar {
     width: 100%;
 }
 
- #logo-welcome{
+#logo-welcome {
     width: 200px;
- }
+}
 
- #item-cadastro{
+#item-cadastro {
     background: #fff;
     border: 1px solid #000;
- }
-
- #item-cadastro-b:hover{
-    color: #386fb5;
- }
+}
 
 
-.nav-link #item-login{
+.nav-link #item-login {
     color: black !important;
 }
 
-.nav-link #item-cadastro-b{
+.nav-link #item-cadastro-b {
     color: black !important;
 }
 
-li{
+#item-cadastro-b:hover {
+    color: #007bff !important;
+}
+
+li {
     margin: 0 10px;
 }
 
-#itens-navbar{
+#itens-navbar {
     justify-content: right;
 }
 
-#item-login:hover{
+#item-login:hover {
     color: #fff !important;
 }
 
-@media (max-width: 992px){
-    
-    #item-cadastro{
+@media (max-width: 992px) {
+
+    #item-cadastro {
         background: none;
         border: none;
-     }
+    }
 
-     li{
-      margin: 0;
-  }
+    li {
+        margin: 0;
+    }
 
 
-    
+
 }
 
 /* Fim NavBar */
@@ -71,12 +70,28 @@ li{
 
 /* Início Carrossel Cursos*/
 
-.text-slide-welcome{
+.text-slide-welcome {
     margin-top: 40px;
     text-align: center;
 }
-.swiper-wrapper{
-    margin-top: 30px;
+
+.card-carroussel {
+    overflow: hidden;
+}
+
+.card-header {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.card-header img {
+    width: 100%;
+    border: 1px solid red;
+}
+
+
+#second-div-slider {
+    margin: auto;
 }
 
 /* Fim Carrossel */
@@ -84,74 +99,233 @@ li{
 
 
 /* Footer Welcome */
-footer{
+
+.row {
+    margin: 0px !important;
+}
+
+footer {
     margin: 40px 0 0 0;
     background-color: #007bff;
-    color: #fff;
+
 
 }
 
-.footer-row{
-height: 200px;
+.footer-row {
+    height: 200px;
 }
 
-#footer-logo{
+#footer-logo {
     margin: auto;
     text-align: right;
 }
-#footer-logo img{
+
+#footer-logo img {
     width: 70%;
-    
+
 }
 
-#footer-center-list{
+#footer-center-list {
     margin: auto;
     text-align: right;
 }
 
 
 
-ul a li{
+ul a li {
     color: #000 !important;
     list-style: none;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
 }
 
 
-#social-icons-line{
-   margin: auto;
+#social-icons-line {
+    margin: auto;
 }
 
 
 
-#social-icons-line a img{
-   margin: 0 10px;
+#social-icons-line a img {
+    margin: 20px 10px 20px 10px;
     width: 30px;
 }
+
+#social-icons-line a img:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
+
+@media (max-width: 575px) {
+    #footer-logo {
+        text-align: center;
+    }
+
+    #footer-logo img {
+        width: 300px;
+        margin: 10px 0;
+    }
+
+    #icones-div {
+        text-align: center;
+    }
+
+    #ul-footer {
+        padding: inherit;
+        margin-bottom: 20px;
+    }
+
+    .footer-row {
+        height: 250px;
+    }
+}
+
+
 /* Fim Footer Welcome */
 
 
-/* CSS Tela Home */
 
-
-#card-info-courses p{
-    margin: 0;
-}
-
-.card-img{
-    background-repeat: no-repeat;
-    background-size: auto;
-    height: 150px;
-}
-
-.card-img img{
+/* Cursos Registrados */
+.card-img img {
     border-radius: 2px;
     width: 100%;
     height: 150px;
 }
 
 
+/* Tela Open Course */
+
+#img-open-course {
+    width: 300px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.background-open-course {
+    background-color: #fff;
+    padding: 30px 10px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 1px rgba(167, 167, 167, 0.13), 0 1px 3px rgba(155, 155, 155, 0.2);
+}
+
+.clasroom {
+    padding: 0 !important;
+}
+
+/* Tela Open My courses */
+
+#informations-open-my-courses {
+    margin: auto;
+}
+
+#image-open-my-courses {
+    border-radius: 5px;
+}
+
+#colum-background-white {
+    background-color: #fff;
+    padding: 30px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 1px rgba(114, 114, 114, 0.13), 0 1px 3px rgba(110, 110, 110, 0.2);
+}
 
 
-/* Início create course estilização */
+/* Reproduction Vídeo */
+
+#div-list-reproduction {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#div-list-reproduction ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#div-list-reproduction ul li {
+    margin: 0px 0px 2px 0px !important;
+    padding: 14px;
+    height: 50px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    list-style: none;
+
+}
+
+#div-list-reproduction ul li p {
+    margin: 0;
+}
+
+
+#div-list-reproduction li:hover {
+    background: rgb(0, 0, 0) !important;
+    transition: 0.5s;
+}
+
+.row-reproduction {
+    background: #fff;
+    padding: 10px 5px;
+}
+
+
+@media (max-width: 575px) {
+
+
+    #div-list-reproduction ul li {
+        /* width: ; */
+    }
+}
+
+
+/* Tela Home */
+
+.card {
+    width: 18rem;
+    margin: 0 5px;
+    box-sizing: inherit !important;
+}
+
+.card-name {
+    height: 40px;
+}
+
+.card-title {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    
+}
+
+.card-description {
+    padding: 10px 0;
+    height: 40px;
+}
+
+
+
+@media (max-width: 859px) {
+    .row-card {
+        justify-content: center;
+    }
+
+    .title-center {
+        text-align: center;
+    }
+
+}
+
+
+/* Tela Mais informações */

@@ -5,6 +5,7 @@ use App\Http\Controllers\MoreInformationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MyCoursesController;
 use App\Http\Controllers\ReproductionVideoController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 
 Route::get('/login', function () {
     return view('login');

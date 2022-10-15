@@ -3,12 +3,9 @@
 @section('title', 'Dashboard')
 <link rel="stylesheet" href="/css/styles.css">
 @section('content_header')
-    <div class="row">
-        <div class="col-4">
-            <h1>Editando: {{$course->name}}</h1>
-        </div>
-
-    </div>
+    
+<h1>Editando: {{$course->name}}</h1>
+    
 
 @stop
 
