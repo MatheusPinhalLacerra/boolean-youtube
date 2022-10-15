@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Course_area;
 use Google\Service\AIPlatformNotebooks\Event;
+use Google\Service\ContainerAnalysis\EnvelopeSignature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,6 +65,7 @@ class CreateCourseController extends Controller
 
             $course->image = $imageName;
         }
+ 
 
         $course->save();
 
@@ -106,25 +108,9 @@ class CreateCourseController extends Controller
     public function update(Request $request, $id)
     {
        
+        Course::findOrFail($request->id) -> update($request->all());
 
-        $this->Course->where(['id'=>$id])->update([
-
-           'name' => $request->name,
-           'description' => $request->description,
-           'instructor_name' => $request->instructor_name,
-           'course_areas_id' => $request->course_areas_id
-
-        ]);
-
-
-
-        // $area_curso= Course_area::get();
-        // if (!$course = Course :: find($id)){
-        //     return redirect() -> route('create.index');
-        // }
-        // $course->update($request->all());
-
-        return route('mycourses.index');
+        // return view('open-courses', $id);
     
     }
 

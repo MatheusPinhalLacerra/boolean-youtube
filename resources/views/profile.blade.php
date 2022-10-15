@@ -8,9 +8,9 @@
 
 @section('content')
 <!-- falta ajustar rota, fazer validação e salvar -->
-<form id="editfuncform" action="" method="POST" enctype="multipart/form-data">
+<form id="editfuncform" action="{{route('profile-edit.store', $user_id)}}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('put')
+    {{--@method('put')--}}
     <input type="hidden" value="" name="user_id">
     <div class="rounded bg-white">
         <div class="row">
@@ -20,17 +20,17 @@
                     <label id="btn_image" class="btn-sm btn-success mt-3" for="imagem" style="cursor: pointer;"> Selecionar imagem </label>
                     <input id="imagem" type="file" name="imagem" accept=".png, .jpg, .jpeg" hidden>
                     <span class="font-weight-bold">
-                       Nome
+                       {{$user->name}}
                     </span>
                     <span class="text-black-50">
-                        Email
+                        {{$user->email}}
                     </span>
                 </div>
             </div>
             {{-- Até aqui está ok o Layout --}}
 
 
-            <div class="col-md-5 border-right">
+            <div class="col-md-5 border-right" >
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Configuração do Perfil</h4>
@@ -96,7 +96,7 @@
                     <div class="mt-5">
                         <div class="row justify-content-between">
                             <div class="col-8">
-                                <x-adminlte-input id="cepInserted" name="cep" placeholder="Cep" value="">
+                                <x-adminlte-input id="cepInserted" name="cep" placeholder="Cep" value="{{$profile->CEP}}">
                                     <x-slot name="prependSlot">
                                         <div class="input-group-text" title="CEP" style="width: 48px">
                                             <i class="far fa-address-card"></i>
@@ -153,7 +153,7 @@
                     </div>
 
                     <div class="mt-5 text-center">
-                        <button id="btn-submit-form-editfuncform" class="btn btn-primary profile-button" type="button">Salvar Alterações</button>
+                        <button  class="btn btn-primary profile-button" >Salvar Alterações</button>
                     </div>
                 </div>
             </div>

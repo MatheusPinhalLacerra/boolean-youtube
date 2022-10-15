@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,9 @@ class ProfileController extends Controller
         if (!$user = User :: find($user_id)){
             return redirect() -> route('home');
         }
-        return view('profile',compact('user'));
+        $profile = profile::where('id', $user_id)->get();
+        //dd($profile);
+        return view('profile', ["user_id" => $user_id],compact('user','profile'));
 
         // $user_id = Auth ::id();
         
@@ -48,9 +51,29 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($user_id,Request $request)
     {
-        //
+        
+        if ($user_id = profile :: find($user_id)){
+            
+            return redirect() -> route('home');
+        }
+//dd($request);
+        $profile_id = new profile();
+        $profile_id -> dt_birth = $request->data_nasc;
+        $profile_id -> CPF = $request->cpf;
+        $profile_id -> RG = $request->rg;
+        $profile_id -> genre = $request->sexo;
+        $profile_id -> CEP = $request->cep;
+        $profile_id -> address = $request->end_logradouro;
+        $profile_id -> house_number = $request->end_num;
+        $profile_id -> complement = $request->end_complemento;
+        $profile_id -> city = $request->end_cidade;
+        $profile_id -> state = $request->end_estado;
+        $profile_id -> user_id  = $user_id;
+        $profile_id->save();
+
+        return view('profile', ["user_id" => $user_id],compact('user'));
     }
 
     /**

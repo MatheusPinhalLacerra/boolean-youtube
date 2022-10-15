@@ -43,6 +43,8 @@ Route::post('/video/store/create/{id_course}', [VideoController::class, 'store']
 Auth::routes();
 
 Route::get('/admin/settings', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('/admin/settings/{id}', [ProfileController::class, 'store'])->name('profile-edit.store');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

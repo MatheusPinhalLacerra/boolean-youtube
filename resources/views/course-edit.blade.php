@@ -33,14 +33,14 @@
                 placeholder="Nome do Instrutor" required="required" value="{{$course->instructor_name}}">
         </div>
 
-        <div class="course-create-form">
+       {{-- <div class="course-create-form">
             <label for="Área do curso">Área do curso:</label>
             <select class="form-control col-6" name="course_areas_id" id="category" required="required">
                 <option hidden>Selecione a Área do curso</option>
                 @foreach ($area_course as $area)
                     <option value="{{ $area->id }}">{{ $area->name_area }}</option>
                 @endforeach
-            </select>
+            </select>  --}}
 
         </div>
 
@@ -54,10 +54,10 @@
         <div style="margin: 30px 0%">
             <p>Imagem de Capa</p> 
             <label for="imagem" class="col-12" style=""></label>
-            <input type="file" name="image" id="imagem" ></textarea>
+            <input type="file" name="image" id="imagem" value="{{$course->image}}"></textarea>
             <img src="/img/cursos/{{ $course->image }}" alt="" style="width: 150px">
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Salvar alterações</button>
+        <button class="btn btn-primary">Salvar alterações</button>
     </form>
 
 
