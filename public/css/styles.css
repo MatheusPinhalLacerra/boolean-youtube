@@ -212,9 +212,6 @@ ul a li {
     box-shadow: 0 0 1px rgba(167, 167, 167, 0.13), 0 1px 3px rgba(155, 155, 155, 0.2);
 }
 
-.clasroom {
-    padding: 0 !important;
-}
 
 /* Tela Open My courses */
 
@@ -232,6 +229,16 @@ ul a li {
     border-radius: 10px;
     margin-bottom: 30px;
     box-shadow: 0 0 1px rgba(114, 114, 114, 0.13), 0 1px 3px rgba(110, 110, 110, 0.2);
+}
+
+.clasroom {
+    padding: 0 !important;
+    
+}
+
+.container-clasroom{
+    
+    margin-bottom: 30px !important;
 }
 
 
@@ -329,3 +336,36 @@ ul a li {
 
 
 /* Tela Mais informações */
+
+#informations-more-informations{
+   margin: auto;
+
+}
+
+#div-img-more-informations{
+    background-color: rgb(221, 221, 221);
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#img-more-informations{
+    border: 5px solid #fff;
+    margin: 20px 0;
+}
+
+.colum-more-information{
+    padding: 0 !important;
+}
+
+@media (max-width: 991px) {
+    #title-center-more-information{
+        text-align: center;
+    }
+
+    #informations-more-informations{
+        text-align: center;
+        padding-top: 20px;
+    }
+}

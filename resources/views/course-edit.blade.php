@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/css/styles.css">
 @section('content_header')
     
-<h1>Editando: {{$course->name}}</h1>
+<h3>Editando: {{$course->name}}</h3>
     
 
 @stop
