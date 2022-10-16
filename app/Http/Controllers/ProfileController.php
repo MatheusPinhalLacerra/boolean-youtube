@@ -26,8 +26,8 @@ class ProfileController extends Controller
         if (!$user = User :: find($user_id)){
             return redirect() -> route('home');
         }
-        $profile = profile::where('id', $user_id)->get();
-        //dd($profile);
+        $profile = profile::where('user_id', $user_id)->first();
+       // dd($profile);
         return view('profile', ["user_id" => $user_id],compact('user','profile'));
 
         // $user_id = Auth ::id();
@@ -53,10 +53,11 @@ class ProfileController extends Controller
      */
     public function store($user_id,Request $request)
     {
+        $profile = profile::where('user_id', $user_id)->get('user_id');
         
-        if ($user_id = profile :: find($user_id)){
-            
-            return redirect() -> route('home');
+        if ($profile == null ){
+            dd("batata");
+            ;
         }
 //dd($request);
         $profile_id = new profile();
@@ -70,6 +71,7 @@ class ProfileController extends Controller
         $profile_id -> complement = $request->end_complemento;
         $profile_id -> city = $request->end_cidade;
         $profile_id -> state = $request->end_estado;
+        $user_id = Auth ::id();
         $profile_id -> user_id  = $user_id;
         $profile_id->save();
 

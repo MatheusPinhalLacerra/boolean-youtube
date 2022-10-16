@@ -42,7 +42,7 @@
                             </div>
                         </x-slot>
                     </x-adminlte-input>
-                    <x-adminlte-input name="data_nasc" placeholder="Data de Nascimento *" value="">
+                    <x-adminlte-input name="data_nasc" placeholder="Data de Nascimento *" value="{{$profile->dt_birth}}">
                         <x-slot name="prependSlot">
                             <div class="input-group-text" title="Data de Nascimento" style="width: 48px">
                                 <i class="fas fa-lg fa-birthday-cake"></i>
@@ -52,7 +52,7 @@
 
                     <div class="row justify-content-between">
                         <div class="col-6">
-                            <x-adminlte-input name="rg" placeholder="RG *" value="">
+                            <x-adminlte-input name="rg" placeholder="RG *" value="{{$profile->RG}}">
                                 <x-slot name="prependSlot">
                                     <div class="input-group-text" title="RG" style="width: 48px">
                                         <i class="fas fa-address-card"></i>
@@ -61,7 +61,7 @@
                             </x-adminlte-input>
                         </div>
                         <div class="col-6">
-                            <x-adminlte-input id='cpf' name="cpf" placeholder="CPF *" data-inputmask-regex="^\d{3}\.\d{3}\.\d{3}\-\d{2}$" data-mask value="">
+                            <x-adminlte-input id='cpf' name="cpf" placeholder="CPF *" data-inputmask-regex="^\d{3}\.\d{3}\.\d{3}\-\d{2}$" data-mask value="{{$profile->CPF}}">
                                 <x-slot name="prependSlot">
                                     <div class="input-group-text" title="CPF" style="width: 48px">
                                         <i class="fas fa-address-card"></i>
@@ -79,11 +79,10 @@
                                         <i class="fas fa-venus-mars"></i>
                                     </div>
                                 </div>
-                                <select class="form-control" name="sexo">
-                                    <option value=""></option>
+                                <select class="form-control" name="sexo" value="{{$profile->genre}}">
+                                    <option value="Indefinido">Indefinido</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
-                                    <option value="Indefinido">Indefinido</option>
                                 </select>
                             </div>
                         </div>
@@ -111,8 +110,8 @@
                             </div>
                         </div>
 
-                        <x-adminlte-textarea id="end_logradouro" name="end_logradouro" placeholder="Endereço" rows=2>
-                            <x-slot name="prependSlot">
+                        <x-adminlte-input id="end_logradouro" name="end_logradouro" placeholder="Endereço" rows="2" value="{{$profile->address}}">
+                            <x-slot name="prependSlot"  >
                                 <div class="input-group-text" title="Endereço" style="width: 48px">
                                     <i class="fas fa-lg fa-building"></i>
                                 </div>
@@ -120,7 +119,7 @@
 
                         </x-adminlte-textarea>
 
-                        <x-adminlte-input type="text" name="end_num" placeholder="Número" value="{{ $funcionario->end_num ?? old('end_num')}}">
+                        <x-adminlte-input type="text" name="end_num" placeholder="Número" value="{{$profile->house_number}}">
                             <x-slot name="prependSlot">
                                 <div class="input-group-text" title="Número" style="width: 48px">
                                     <i class="fas fa-house-user"></i>
@@ -128,7 +127,7 @@
                             </x-slot>
                         </x-adminlte-input>
 
-                        <x-adminlte-input name="end_complemento" placeholder="Complemento" value="{{ $funcionario->end_complemento ?? old('end_complemento')}}">
+                        <x-adminlte-input name="end_complemento" placeholder="Complemento" value="{{ $profile->complement}}">
                             <x-slot name="prependSlot">
                                 <div class="input-group-text" title="Complemento" style="width: 48px">
                                     <i class="fas fa-house-user"></i>
@@ -138,7 +137,7 @@
 
                         <div class="row justify-content-between">
                             <div class="col-9">
-                                <x-adminlte-input id="end_cidade" name="end_cidade" placeholder="Cidade" value="">
+                                <x-adminlte-input id="end_cidade" name="end_cidade" placeholder="Cidade" value="{{$profile->city}}">
                                     <x-slot name="prependSlot">
                                         <div class="input-group-text" title="Cidade" style="width: 48px">
                                             <i class="fas fa-city"></i>
@@ -147,7 +146,7 @@
                                 </x-adminlte-input>
                             </div>
                             <div class="col-3">
-                                <x-adminlte-input id="end_estado" name="end_estado" placeholder="Estado" value="" />
+                                <x-adminlte-input id="end_estado" name="end_estado" placeholder="Estado" value="{{$profile->state}}" />
                             </div>
                         </div>
                     </div>

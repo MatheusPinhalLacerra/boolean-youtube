@@ -33,7 +33,7 @@
                 </div> --}}
 
 
-                <a href="{{ route('more-informations.index', $registered->id) }}" class="btn btn-primary">Mais
+                <a href="{{ route('open-courses.index', $registered->id) }}" class="btn btn-primary">Mais
                     Informações</a>
 
 
