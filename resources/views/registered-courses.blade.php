@@ -7,12 +7,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+<div class="title-center">
     <h1>Cursos Registrados</h1>
+</div>
+    
 @stop
 
 @section('content')
 
-    <div class="row">
+    <div class="row row-card">
         @foreach ($registered_courses as $registered)
           
         <div class="card card-container" style="margin-right: 20px">
