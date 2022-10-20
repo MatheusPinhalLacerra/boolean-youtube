@@ -4,7 +4,11 @@
 <link rel="stylesheet" href="/css/styles.css">
 @section('content_header')
 
+<<<<<<< HEAD
     <h1>Editando: {{ $course->name }}</h1>
+=======
+    <h3>Editando: {{ $course->name }}</h3>
+>>>>>>> 063db0d9e29e752a4135f5bd17d067f7861a8a0e
 
 
 @stop
@@ -19,7 +23,11 @@
 
         <div class="course-create-form" style="margin-bottom: 20px">
             <label for="curso">Curso</label>
+<<<<<<< HEAD
             <input type="text" class="form-control col-6" id="curso" name="name" placeholder="Nome do Curso"
+=======
+            <input type="text" class="form-control col-12 col-lg-6" id="curso" name="name" placeholder="Nome do Curso"
+>>>>>>> 063db0d9e29e752a4135f5bd17d067f7861a8a0e
                 required="required" value="{{ $course->name }}">
         </div>
 
@@ -27,6 +35,7 @@
 
         <div class="course-create-form" style="margin: 20px 0">
             <label for="curso">Nome do Instrutor:</label>
+<<<<<<< HEAD
             <input type="text" class="form-control col-6" id="instructor_name" name="instructor_name"
                 placeholder="Nome do Instrutor" required="required" value="{{ $course->instructor_name }}">
         </div>
@@ -45,15 +54,24 @@
                 @endforeach
             </select>
 
+=======
+            <input type="text" class="form-control col-12 col-lg-6" id="instructor_name" name="instructor_name"
+                placeholder="Nome do Instrutor" required="required" value="{{ $course->instructor_name }}">
+>>>>>>> 063db0d9e29e752a4135f5bd17d067f7861a8a0e
         </div>
 
         <div class="course-create-form" style="margin: 20px 0">
             <label for="descricao">Descrição</label>
             {{-- <textarea name="description" id="descricao" cols="30" rows="5" class="form-control col-6" --}}
             {{-- required="required" ></textarea> --}}
+<<<<<<< HEAD
             <input type="text" class="form-control col-6" id="descricao" name="description"
+=======
+            <input type="text" class="form-control col-12 col-lg-6" id="descricao" name="description"
+>>>>>>> 063db0d9e29e752a4135f5bd17d067f7861a8a0e
                 placeholder="Descrição do Curso" value="{{ $course->description }}">
         </div>
+
 
         <div style="margin: 30px 0%">
             <p>Imagem de Capa</p>
@@ -72,7 +90,5 @@
 @stop
 
 @section('js')
-    <script>
-        console.log('Hi!');
-    </script>
+    
 @stop

@@ -27,8 +27,7 @@
                 <label for="arquivo-video">Arquivo de vídeo</label>
                 <p><input type="file" id="arquivo-video" name="video" required="required"></p>
 
-                <p><button type="submit" class="btn btn -primary" name="submit">Enviar</button></p>
-
+                <p><button type="submit" class="btn btn-primary" name="submit">Enviar</button></p>
             </form>
         </div>
 
