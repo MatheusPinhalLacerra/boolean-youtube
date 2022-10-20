@@ -14,12 +14,15 @@ class ReproductionVideoController extends Controller
      */
     public function index($id)
     {
+      
         $video= Video::where('id', $id)->first();
+        $videoAll = Video::get();
+        // dd($videoAll);
         // $video=["token_youtube"=>'--KxaI6ywnk'];
         // $videos = Video::get();
         // dd($video);
 
-        return view('reproduction-video',['video'=>$video, 'video_information' => $video]);
+        return view('reproduction-video',['video'=>$video, 'videos' =>$videoAll]);
     }
 
     /**

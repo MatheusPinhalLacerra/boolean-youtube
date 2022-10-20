@@ -17,7 +17,7 @@
 
     @foreach ($courses as $course)
         <div class="row">
-            <div class="col-8" id="colum-background-white">
+            <div class="col-12 col-lg-8" id="colum-background-white">
                 <div class="row">
                     <div class="col-sm" id="informations-open-my-courses">
                         <h5>{{ $course->name }}</h5>
@@ -34,7 +34,7 @@
 
     <h5 style="margin-bottom: 10px">Lista de Aulas</h5>
     @foreach ($videos as $videos)
-        <div class="col-8 clasroom">
+        <div class="col-12 col-lg-8 clasroom">
             <div class="small-box ">
                 <div class="inner card-info-courses bg-transparent text-dark" id="">
                     <h6><strong>{{ $videos->title }}</strong></h6>
