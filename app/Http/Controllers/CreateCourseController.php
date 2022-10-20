@@ -92,7 +92,7 @@ class CreateCourseController extends Controller
     public function edit($id)
     {
         $area_curso= Course_area::get();
-        if (!$course = Course :: find($id)){
+        if (!$course = Course :: with('course_area')-> find($id)){
             return redirect() -> route('create.index');
         }
         return view('course-edit', ['area_course' => $area_curso],compact('course'));
@@ -110,7 +110,7 @@ class CreateCourseController extends Controller
        
         Course::findOrFail($request->id) -> update($request->all());
 
-        // return view('open-courses', $id);
+        return redirect()->route('registered-courses.index');
     
     }
 

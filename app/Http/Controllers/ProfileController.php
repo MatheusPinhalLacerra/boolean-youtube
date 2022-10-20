@@ -27,12 +27,8 @@ class ProfileController extends Controller
             return redirect() -> route('home');
         }
         $profile = profile::where('user_id', $user_id)->first();
-       // dd($profile);
         return view('profile', ["user_id" => $user_id],compact('user','profile'));
 
-        // $user_id = Auth ::id();
-        
-        // return view('profile', [$user_id]);
     }
 
     /**
@@ -53,14 +49,8 @@ class ProfileController extends Controller
      */
     public function store($user_id,Request $request)
     {
-        $profile = profile::where('user_id', $user_id)->get('user_id');
-        
-        if ($profile == null ){
-            dd("batata");
-            ;
-        }
-//dd($request);
-        $profile_id = new profile();
+        $user_id = Auth ::id();
+        $profile_id = profile::where('user_id', $user_id)->first();       
         $profile_id -> dt_birth = $request->data_nasc;
         $profile_id -> CPF = $request->cpf;
         $profile_id -> RG = $request->rg;
@@ -70,12 +60,11 @@ class ProfileController extends Controller
         $profile_id -> house_number = $request->end_num;
         $profile_id -> complement = $request->end_complemento;
         $profile_id -> city = $request->end_cidade;
-        $profile_id -> state = $request->end_estado;
-        $user_id = Auth ::id();
-        $profile_id -> user_id  = $user_id;
+        $profile_id -> state = $request->end_estado; 
         $profile_id->save();
-
-        return view('profile', ["user_id" => $user_id],compact('user'));
+        
+        //profile::findOrFail($request->id) -> update($request->all());
+        return redirect()->route('home');
     }
 
     /**
@@ -109,7 +98,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        profile::findOrFail($request->id) -> update($request->all());
     }
 
     /**

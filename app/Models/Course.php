@@ -14,6 +14,10 @@ public function users (){
     return $this->belongsToMany(User::class, "user_courses","course_id","user_id");
 }
 
+public function course_area(){
+return $this->belongsTo(Course_area::class,'course_areas_id','id');
+}
+
 protected $guarded = [];
 
 
