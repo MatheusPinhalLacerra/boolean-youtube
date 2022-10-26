@@ -50,7 +50,19 @@ class ProfileController extends Controller
     public function store($user_id,Request $request)
     {
         $user_id = Auth ::id();
-        $profile_id = profile::where('user_id', $user_id)->first();       
+        $profile_id = profile::where('user_id', $user_id)->first(); 
+        
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path('img/cursos'), $imageName);
+
+            $profile_id->image = $imageName;
+        }
+
         $profile_id -> dt_birth = $request->data_nasc;
         $profile_id -> CPF = $request->cpf;
         $profile_id -> RG = $request->rg;

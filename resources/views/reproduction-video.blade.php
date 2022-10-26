@@ -1,7 +1,3 @@
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -42,6 +38,7 @@
 
         @section('css')
             <link rel="stylesheet" href="/css/admin_custom.css">
+            <link rel="stylesheet" href="/css/styles.css">
         @stop
 
         @section('js')

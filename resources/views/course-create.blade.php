@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
-<link rel="stylesheet" href="/css/styles.css">
+
 @section('content_header')
     <div class="row">
         <div class="title-center col-12 col-lg-4">
@@ -52,7 +52,7 @@
         <div style="margin: 30px 0%">
             <p>Imagem de Capa</p> 
             <label for="imagem" class="col-12" style=""></label>
-            <input type="file" name="image" id="imagem" required="required"></textarea>
+            <input type="file" name="image" id="imagem" required="required">
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Cadastrar Curso</button>
     </form>
@@ -61,7 +61,7 @@
 @stop
 
 @section('css')
-
+<link rel="stylesheet" href="/css/styles.css">
 @stop
 
 @section('js')

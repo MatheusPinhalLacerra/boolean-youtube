@@ -1,7 +1,3 @@
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -16,7 +12,10 @@
         <div class="background-open-course">
             <h5>{{ $course->name }}</h5>
             <p>{{ $course->description }}</p>
-            <img id="img-open-course" class="d-block" src="/img/cursos/{{ $course->image }}" alt="Imagem Capa">
+            <div style="max-height: 180px; overflow: clip; margin-bottom: 30px">
+                <img id="img-open-course" class="d-block" src="/img/cursos/{{ $course->image }}" alt="Imagem Capa">
+            </div>
+            
             <a href="{{ route('video.create', $course->id) }}"><button class="btn btn-primary">Enviar Vídeo</button></a>
             <a href="{{ route('edit-course.edit', $course->id) }}"><button class="btn btn-primary">Editar Curso</button></a>
         </div>
@@ -27,6 +26,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/styles.css">
 @stop
 
 @section('js')

@@ -16,11 +16,14 @@
             <div class="row">
                 <div class="col-md-3 border-right">
                     <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                        <img id="preview-image" class="profile-user-img img-fluid img-circle" width="150px" height="150"
-                            src="/img/cursos/80ae4382ccfec987dca09fb98b49b750.jpg">
+                        <img id="preview-image" class="profile-user-img img-circle"
+                            src="/img/cursos/{{$profile->image}}">
                         <label id="btn_image" class="btn-sm btn-success mt-3" for="imagem" style="cursor: pointer;">
                             Selecionar imagem </label>
-                        <input id="imagem" type="file" name="imagem" accept=".png, .jpg, .jpeg" hidden>
+                        
+                        <input type="file" name="image" id="imagem" required="required" hidden>
+                        {{-- <input id="imagem" type="file" name="imagem" accept=".png, .jpg, .jpeg" hidden> --}}
+                        {{-- <button type="submit" class="btn btn-primary" name="submit">Cadastrar Curso</button> --}}
                         <span class="font-weight-bold">
                             {{ $user->name }}
                         </span>
@@ -29,7 +32,7 @@
                         </span>
                     </div>
                 </div>
-                {{-- Até aqui está ok o Layout --}}
+                
 
 
                 <div class="col-md-5 border-right">

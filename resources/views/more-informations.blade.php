@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+
 
 @extends('adminlte::page')
 
@@ -26,7 +24,7 @@
                             <h5>{{ $course->name }}</h5>
                             <p>{{ $course->description }}</p>
                         </div>
-                        <div class="col-12 col-lg-4" id="div-img-more-informations">
+                        <div class="col-12 col-lg-4" id="div-img-more-informations" style="max-height: 300px; max-width: 350px; overflow: clip">
                             <img src="/img/cursos/{{ $course->image }}" id="img-more-informations"
                                 alt="Imagem de Capa do Curso">
                         </div>
@@ -43,6 +41,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/styles.css">
 @stop
 
 @section('js')

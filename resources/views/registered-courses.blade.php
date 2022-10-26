@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+
 
 @extends('adminlte::page') 
 
@@ -18,9 +16,11 @@
     <div class="row row-card">
         @foreach ($registered_courses as $registered)
           
-        <div class="card card-container" style="margin-right: 20px">
-
-            <img class="card-img-top" src="/img/cursos/{{ $registered->image }}" alt="Imagem de capa">
+        <div class="card card-container" style="margin: 20px 20px 0 0">
+            <div style="max-height: 180px; overflow: clip;">
+                <img style="object-fit: cover; height: 180px" class="card-img-top" src="/img/cursos/{{ $registered->image }}" alt="Imagem de capa">
+            </div>
+            
 
 
             <div class="card-body">
@@ -62,6 +62,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/styles.css">
 @stop
 
 @section('js')

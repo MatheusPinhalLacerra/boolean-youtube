@@ -53,10 +53,9 @@ class CreateCourseController extends Controller
         $course->description = $request->description;
         $course->instructor_name = $request->instructor_name;
         $course->course_areas_id = $request->course_areas_id;
-
+        
         //Upload de Imagem
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            
             $requestImage = $request->image;
             $extension = $requestImage->extension();
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;

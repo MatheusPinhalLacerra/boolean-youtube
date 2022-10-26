@@ -1,7 +1,3 @@
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-
 @extends('adminlte::page')
 
 @section('title', 'Enviar Vídeo')
@@ -18,9 +14,11 @@
     <div class="row row-card">
         @foreach ($my_courses as $courses)
 
-        <div class="card card-container" style="margin-right: 20px">
-
-            <img class="card-img-top" src="/img/cursos/{{ $courses->image }}" alt="Imagem de capa">
+        <div class="card card-container" style="margin: 20px 20px 0 0">
+            <div style="max-height: 180px; overflow: clip">
+                <img style="object-fit: cover; height: 180px" class="card-img-top" src="/img/cursos/{{ $courses->image }}" alt="Imagem de capa">
+            </div>
+            
 
 
             <div class="card-body">
@@ -44,6 +42,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+        <link rel="stylesheet" href="/css/styles.css">
 @stop
 
 
